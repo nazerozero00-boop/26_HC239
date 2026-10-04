@@ -104,7 +104,8 @@
 python
 - 1. pipeline.py : H 신호의 Moving RMS를 기반으로 실제 자화가 이루어진 구간을 검출하고, 불완전한 자화 구간을 제외하여 J-A fitting에 사용할 유효 cycle만 추출합니다.
 
-{152-158}
+**152-158**
+
   '''h_rms = np.sqrt(
     np.convolve(
         H ** 2,
@@ -121,7 +122,8 @@ threshold = (
     + 0.25 * (q75 - q25)
 )
 
-active_mask = h_rms > threshold'''
+active_mask = h_rms > threshold
+'''
 
 {198-214}
 lengths = np.array(
