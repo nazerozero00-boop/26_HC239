@@ -180,7 +180,8 @@ active_mask = h_rms > threshold
                     "all_fit_runs": all_fit_runs,
                     "message": best_fit["message"],
                 }
-            )```
+            )
+```
 
 **611-669**
 ```for candidate in valid_cycles:
@@ -213,12 +214,14 @@ active_mask = h_rms > threshold
         candidate["validation_nrmse_list"] = validation_nrmse
         candidate["validation_nrmse_median"] = float(
             np.median(validation_nrmse)
-        )```
+        )
+```
 
 **671-676**
  ```selected_cycle = min(
         valid_cycles,
-        key=lambda r: r["validation_nrmse_median"],)```
+        key=lambda r: r["validation_nrmse_median"],)
+```
 
 -3. pipeline.py : 동일한 J-A parameter를 유지하면서 각 cycle의 초기 자화 상태 M_0만 별도로 보정하여 측정 cycle 간 초기 상태 차이를 보완합니다. 이를 통해 기준 데이터의 median NRMSE를 약 개선하였습니다.
 
