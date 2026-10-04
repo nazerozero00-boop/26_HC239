@@ -106,7 +106,7 @@ python
 
 **152-158**
 
-  '''h_rms = np.sqrt(
+  ```h_rms = np.sqrt(
     np.convolve(
         H ** 2,
         kernel,
@@ -123,10 +123,9 @@ threshold = (
 )
 
 active_mask = h_rms > threshold
-'''
-
-{198-214}
-lengths = np.array(
+```
+**198-214**
+```lengths = np.array(
         [
             end - start + 1
             for start, end in segments
@@ -142,12 +141,12 @@ lengths = np.array(
             end - start + 1
             >= 0.70 * typical_length
         )
-    ]
+    ]```
 
 -2. pipeline.py : 각 자화 cycle에서 독립적으로 J-A parameter를 추정한 뒤, 후보 parameter를 다른 모든 cycle에 다시 적용하는 Cross-Cycle Validation을 수행하여 특정 cycle에 과적합되지 않는 대표 parameter를 선택합니다.
 
-{538-570}
-best_fit, all_fit_runs = (
+**538-570**
+```best_fit, all_fit_runs = (
                 fit_ja_multistart(
                     H=H_cycle,
                     B=B_cycle,
@@ -180,10 +179,10 @@ best_fit, all_fit_runs = (
                     "all_fit_runs": all_fit_runs,
                     "message": best_fit["message"],
                 }
-            )
+            )```
 
-{611-669}
-for candidate in valid_cycles:
+**611-669**
+```for candidate in valid_cycles:
 
         params = candidate["params"]
         validation_nrmse = []
@@ -213,17 +212,17 @@ for candidate in valid_cycles:
         candidate["validation_nrmse_list"] = validation_nrmse
         candidate["validation_nrmse_median"] = float(
             np.median(validation_nrmse)
-        )
+        )```
 
-{671-676}
- selected_cycle = min(
+**671-676**
+ ```selected_cycle = min(
         valid_cycles,
-        key=lambda r: r["validation_nrmse_median"],)
+        key=lambda r: r["validation_nrmse_median"],)```
 
 -3. pipeline.py : 동일한 J-A parameter를 유지하면서 각 cycle의 초기 자화 상태 M_0만 별도로 보정하여 측정 cycle 간 초기 상태 차이를 보완합니다. 이를 통해 기준 데이터의 median NRMSE를 약 개선하였습니다.
 
-{781-809}
- def objective(m0):
+**781-809**
+ ```def objective(m0):
         B_pred, _ = simulate_ja(
             H=H_cycle,
             params=params,
@@ -251,10 +250,11 @@ for candidate in valid_cycles:
             "xatol": 1e-3,
             "maxiter": 120,
         },
-    )
+    )```
 
-{840-866}
- if B_range > 1e-12:
+**840-866**
+
+ ```if B_range > 1e-12:
         nrmse = (
             rmse
             / B_range
@@ -280,10 +280,10 @@ for candidate in valid_cycles:
         "success": bool(
             opt.success
         ),
-    }
+    }```
 
-{950-962}
-  return {
+**950-962**
+  ```return {
         "results": results,
         "median_nrmse_percent": float(
             np.median(
@@ -295,12 +295,12 @@ for candidate in valid_cycles:
                 valid_rmse
             )
         ),
-    }
+    }```
 
     -4. ja_model : 큰 H 범위에서 발생할 수 있는 RK4 수치 폭주를 방지하기 위해 H 변화량을 내부 substep으로 나누어 J-A 미분방정식을 계산합니다.
     
-{331-365}
-  MAX_DH_STEP = 1.0
+**331-365**
+  ```MAX_DH_STEP = 1.0
 
     for i in range(
         1,
@@ -333,10 +333,10 @@ for candidate in valid_cycles:
         dH = (
             dH_total
             / n_substeps
-        )
+        )```
 
-{370-431}
-        for _ in range(
+**370-431**
+        ```for _ in range(
             n_substeps
         ):
 
@@ -397,23 +397,27 @@ for candidate in valid_cycles:
 
             H_sub = H_next
 
-        M[i] = M_sub
+        M[i] = M_sub```
 
 -5. ja_fitting.py : J-A parameter들의 크기 차이를 보정하고, 순간적인 spike/outlier가 fitting 전체를 왜곡하지 않도록 Soft-L1 기반 Robust Least-Squares를 적용합니다.
-{220-225}
-B_target = B[start_index:]
+
+**220-225**
+
+```B_target = B[start_index:]
 
     B_scale = np.ptp(B_target)
 
     if B_scale < 1e-12:
-        B_scale = 1.0
-{238-241}
- x_scale = np.maximum(
+        B_scale = 1.0```
+
+**238-241**
+ ```x_scale = np.maximum(
         np.abs(initial_params),
         1e-12,
-    )
-{248-272}
- optimization = least_squares(
+    )```
+
+**248-272**
+ ```optimization = least_squares(
         fun=_ja_residual,
         x0=initial_params,
         bounds=(
@@ -437,9 +441,10 @@ B_target = B[start_index:]
 
         max_nfev=max_nfev,
         verbose=verbose,
-    )
-{292-318}
-error = (
+    )```
+
+**292-318**
+```error = (
         B_fitted[start_index:]
         - B[start_index:]
     )
@@ -466,11 +471,12 @@ error = (
     else:
 
         nrmse = np.nan
+```
         
   -6. diagnosis_engine.py : 전체 진단 Pipeline을 실행한 뒤 복원된 Major Loop에서 Bmax, Area를 추출하고, 해당 특징값을 AI 진단 단계로 전달합니다.
   
- {58-89}
-  result = run_diagnosis(
+ **58-89**
+ ``` result = run_diagnosis(
             B_raw=B_raw,
             H_raw=H_raw,
             fs=fs,
@@ -501,10 +507,10 @@ error = (
             "fs": fs,
             "excitation_freq": excitation_freq,
             "noise_frequencies_used": nf,
-        }
+        }```
 
-{91-107}
-def run_once(self, time_data, H_raw, B_raw, fs=None,
+**91-107**
+```def run_once(self, time_data, H_raw, B_raw, fs=None,
                  noise_frequencies=None, structure_name="",
                  measurement_point="", source_mode="file"):
         feat = self.extract_features(
@@ -521,10 +527,10 @@ def run_once(self, time_data, H_raw, B_raw, fs=None,
         out["fs"] = feat["fs"]
         out["excitation_freq"] = feat["excitation_freq"]
         return out
-
+```
 -7. mlp_model.py : 현재 프로토타입에서는 Bmax와 Area를 입력으로 사용하여 안정·주의·위험 상태를 분류합니다.
-{40-83}
-def diagnose(self, Bmax, Hmax, Area):
+**40-83**
+```def diagnose(self, Bmax, Hmax, Area):
         dArea = (
             0.0
             if self.prev_area is None
@@ -556,10 +562,10 @@ def diagnose(self, Bmax, Hmax, Area):
             "index": idx,
             "dArea": dArea,
         }
-
+```
 -8. sensor_udp_io.py : Raspberry Pi에서 Arduino에 측정 시작·종료 명령을 전송하고, 센싱 디바이스로부터 전송되는 데이터를 UDP로 실시간 수신합니다.
-{52-67}
-  def _send_command(self, command):
+**52-67**
+ ``` def _send_command(self, command):
         if self.sock is None:
             self.connect()
         if command not in ("0", "1"):
@@ -575,8 +581,9 @@ def diagnose(self, Bmax, Hmax, Area):
                 self._send_command("0")
             except OSError:
                 pass
-{75-109}
- def read_measurement(self, duration=DEFAULT_MEASUREMENT_SECONDS):
+```
+**75-109**
+``` def read_measurement(self, duration=DEFAULT_MEASUREMENT_SECONDS):
         if self.sock is None:
             self.connect()
         times, h_values, b_values = [], [], []
@@ -611,10 +618,10 @@ def diagnose(self, Bmax, Hmax, Area):
         if len(times) < 20:
             raise ValueError(f"수신 데이터가 너무 적습니다: {len(times)}개")
         return np.asarray(times), np.asarray(h_values), np.asarray(b_values)
-
+```
 - 9.mlp_retraining.py : COMSOL 기반 데이터를 이용해 초기 MLP를 학습하고, 사용자가 추가한 실제 측정 데이터를 누적하여 Active MLP를 다시 학습할 수 있습니다.
-{28-55}
-def build_mlp(random_state=0):
+**28-55**
+```def build_mlp(random_state=0):
     return make_pipeline(
         StandardScaler(),
         MLPClassifier(
@@ -680,3 +687,4 @@ ef retrain_active_model(training_records):
         "real_files": int(valid_real),
         "training_rows_total": int(len(y)),
     }
+```
