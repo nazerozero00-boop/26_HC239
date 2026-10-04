@@ -144,7 +144,7 @@
 
 
 4.작품 소개영상 
-[![영상 제목](유튜브 썸네일 URL)](https://www.youtube.com/watch?v=YVsy0BCYxd4)
+[![영상 제목](https://img.youtube.com/vi/YVsy0BCYxd4/0.jpg)](https://www.youtube.com/watch?v=YVsy0BCYxd4)
 
 
 
