@@ -53,12 +53,12 @@
 <table>
   <tr>
     <td align="center">
-      <img src="./한이음_사진모음/member1.png" width="110"><br>
+      <img src="./image/member1.png" width="110"><br>
       <b>팀원 1</b><br>
       역할
     </td>
     <td align="center">
-      <img src="./한이음_사진모음/member2.png" width="110"><br>
+      <img src="./image/member2.png" width="110"><br>
       <b>팀원 2</b><br>
       역할
     </td>
