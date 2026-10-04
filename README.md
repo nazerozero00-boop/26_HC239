@@ -48,7 +48,37 @@ AI/ML : Scikit-learn, MLPClassifier, StandardScaler, Joblib
 개발 및 협업 : Visual Studio Code, Jupyter Notebook, Git, GitHub, MS Teams, Google Docs
 
 2. 팀원 소개
+## 👥 Team
 
+<table>
+  <tr>
+    <td align="center">
+      <img src="./images/member1.jpg" width="110"><br>
+      <b>팀원 1</b><br>
+      역할
+    </td>
+    <td align="center">
+      <img src="./images/member2.jpg" width="110"><br>
+      <b>팀원 2</b><br>
+      역할
+    </td>
+    <td align="center">
+      <img src="./images/member3.jpg" width="110"><br>
+      <b>팀원 3</b><br>
+      역할
+    </td>
+    <td align="center">
+      <img src="./images/member4.jpg" width="110"><br>
+      <b>팀원 4</b><br>
+      역할
+    </td>
+    <td align="center">
+      <img src="./images/member5.jpg" width="110"><br>
+      <b>멘토</b><br>
+      Mentor
+    </td>
+  </tr>
+</table>
 
 
 
