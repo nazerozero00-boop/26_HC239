@@ -159,8 +159,8 @@ FFT 및 Notch Filtering, Active Cycle 추출, Jiles-Atherton Parameter Fitting, 
 
 
 5.핵심 소스코드 
-**Language : Python" 
-- 1. pipeline.py : H 신호의 Moving RMS를 기반으로 실제 자화가 이루어진 구간을 검출하고, 불완전한 자화 구간을 제외하여 J-A fitting에 사용할 유효 cycle만 추출합니다.
+- **Language : Python" 
+1. pipeline.py : H 신호의 Moving RMS를 기반으로 실제 자화가 이루어진 구간을 검출하고, 불완전한 자화 구간을 제외하여 J-A fitting에 사용할 유효 cycle만 추출합니다.
 
 **152-158**
 
