@@ -347,7 +347,8 @@ active_mask = h_rms > threshold
 ```
 
 **370-431**
-        ```for _ in range(
+```        
+        for _ in range(
             n_substeps
         ):
 
