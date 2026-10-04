@@ -54,44 +54,39 @@
 
 <table>
   <tr>
-    <td align="center">
+    <td align="center" width="250" nowrap>
       <img src="./image/member2.png" width="110"><br>
       <b>멘티 1</b><br>
-      역할<br> 
-      팀장<br> 
-      FEM 시뮬레이션<br> 
+      • 프로젝트 팀장<br> 
+      • FEM 시뮬레이션<br> 
       센싱 디바이스 S/W 설계
     </td>
-    <td align="center">
+    <td align="center" width="250" nowrap>
       <img src="./image/member6.jpg" width="110"><br>
       <b>멘티 2</b><br>
-      역할<br> 
-      MLP 구조 설계<br> 
-      FFT 및 Notch 필터링<br> 
-      데이터 처리 알고리즘 설계
+      • MLP 구조 설계<br> 
+      • FFT 및 Notch 필터링<br> 
+      • 데이터 처리 알고리즘 설계
     </td>
-    <td align="center">
+    <td align="center" width="250" nowrap>
       <img src="./image/member1.png" width="110"><br>
       <b>멘티 3</b><br>
-      역할<br> 
-      선행 연구 분석<br> 
-      전자기학 이론 검증<br> 
-      센싱 디바이스 H/W 설계
+      • 선행 연구 분석<br> 
+      • 전자기학 이론 검증<br> 
+      • 센싱 디바이스 H/W 설계
     </td>
-    <td align="center">
+     <td align="center" width="250" nowrap>
       <img src="./image/member3.png" width="110"><br>
       <b>멘티 4</b><br>
-      역할<br> 
-      선행 연구 분석<br> 
-      시뮬레이션 데이터 가공<br> 
-      회로 설계 
+      • 선행 연구 분석<br> 
+      • 시뮬레이션 데이터 가공<br> 
+      • 회로 설계 
     </td>
-    <td align="center">
+     <td align="center" width="250" nowrap>
       <img src="./image/member4.png" width="110"><br>
       <b>멘토</b><br>
-      역할<br> 
-      프로젝트 멘토<br> 
-      기술자문
+      • 프로젝트 멘토<br> 
+      • 기술자문
     </td>
   </tr>
 </table>
