@@ -84,12 +84,62 @@
 
 
 
-3.시스템 구성도 
+##3.시스템 구성도 
 
+###3-1
+<p align="center">
+  <img src="./image/photo1.png" width="750">
+</p>
 
+###3-2
+<p align="center">
+  <img src="./image/photo2.png" width="750">
+</p>
 
+###3-3
+<p align="center">
+  <img src="./image/photo3.png" width="750">
+</p>
 
+###3-4
+<p align="center">
+  <img src="./image/photo4.png" width="750">
+</p>
 
+###3-5
+<p align="center">
+  <img src="./image/photo5.png" width="750">
+</p>
+
+###3-6
+<p align="center">
+  <img src="./image/photo6.png" width="750">
+</p>
+
+###3-7
+<p align="center">
+  <img src="./image/photo7.png" width="750">
+</p>
+
+###3-8
+<p align="center">
+  <img src="./image/photo8.png" width="750">
+</p>
+
+###3-9
+<p align="center">
+  <img src="./image/photo9.png" width="750">
+</p>
+
+###3-10
+<p align="center">
+  <img src="./image/photo10.png" width="750">
+</p>
+
+###3-11
+<p align="center">
+  <img src="./image/photo11.png" width="750">
+</p>
 
 
 
