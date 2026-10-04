@@ -705,7 +705,7 @@ active_mask = h_rms > threshold
             raise ValueError(f"수신 데이터가 너무 적습니다: {len(times)}개")
         return np.asarray(times), np.asarray(h_values), np.asarray(b_values)
 ```
-9.mlp_retraining.py : COMSOL 기반 데이터를 이용해 초기 MLP를 학습하고, 사용자가 추가한 실제 측정 데이터를 누적하여 Active MLP를 다시 학습할 수 있습니다.
+ 9.mlp_retraining.py : COMSOL 기반 데이터를 이용해 초기 MLP를 학습하고, 사용자가 추가한 실제 측정 데이터를 누적하여 Active MLP를 다시 학습할 수 있습니다.
 **28-55**
 ```def build_mlp(random_state=0):
     return make_pipeline(
