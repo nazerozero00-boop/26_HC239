@@ -37,6 +37,16 @@
 - 해양·플랜트·산업설비·에너지 구조물 등 반복하중을 받는 강재의 피로 관리
 - 재난 이후 긴급 점검 및 현장용 비파괴 진단 보조 시스템
 
+1-6
+프론트엔드 / GUI : Tkinter, Matplotlib
+백엔드 / 데이터 처리 : Python, NumPy, SciPy, SQLite, CSV
+AI/ML : Scikit-learn, MLPClassifier, StandardScaler, Joblib
+신호처리 / 물리 모델링 : FFT, Notch Filter, Moving RMS, Jiles-Atherton Model, RK4, Robust Least-Squares
+임베디드 / 통신 : Raspberry Pi, Arduino UNO R4 WiFi, UDP, Wi-Fi
+시뮬레이션 / 해석 : COMSOL Multiphysics
+하드웨어 / 센서 : WSH135-XPAN2 Hall Sensor, ACS712 5A, MD13S, Yoke Electromagnet
+개발 및 협업 : Visual Studio Code, Jupyter Notebook, Git, GitHub, MS Teams, Google Docs
+
 2. 팀원 소개
 
 
