@@ -255,7 +255,8 @@ active_mask = h_rms > threshold
             "xatol": 1e-3,
             "maxiter": 120,
         },
-    )```
+    )
+```
 
 **840-866**
 
@@ -285,7 +286,8 @@ active_mask = h_rms > threshold
         "success": bool(
             opt.success
         ),
-    }```
+    }
+```
 
 **950-962**
   ```return {
@@ -300,7 +302,8 @@ active_mask = h_rms > threshold
                 valid_rmse
             )
         ),
-    }```
+    }
+```
 
     -4. ja_model : 큰 H 범위에서 발생할 수 있는 RK4 수치 폭주를 방지하기 위해 H 변화량을 내부 substep으로 나누어 J-A 미분방정식을 계산합니다.
     
@@ -338,7 +341,8 @@ active_mask = h_rms > threshold
         dH = (
             dH_total
             / n_substeps
-        )```
+        )
+```
 
 **370-431**
         ```for _ in range(
@@ -402,7 +406,8 @@ active_mask = h_rms > threshold
 
             H_sub = H_next
 
-        M[i] = M_sub```
+        M[i] = M_sub
+```
 
 -5. ja_fitting.py : J-A parameter들의 크기 차이를 보정하고, 순간적인 spike/outlier가 fitting 전체를 왜곡하지 않도록 Soft-L1 기반 Robust Least-Squares를 적용합니다.
 
@@ -413,13 +418,15 @@ active_mask = h_rms > threshold
     B_scale = np.ptp(B_target)
 
     if B_scale < 1e-12:
-        B_scale = 1.0```
+        B_scale = 1.0
+```
 
 **238-241**
  ```x_scale = np.maximum(
         np.abs(initial_params),
         1e-12,
-    )```
+    )
+```
 
 **248-272**
  ```optimization = least_squares(
@@ -446,7 +453,8 @@ active_mask = h_rms > threshold
 
         max_nfev=max_nfev,
         verbose=verbose,
-    )```
+    )
+```
 
 **292-318**
 ```error = (
@@ -512,7 +520,8 @@ active_mask = h_rms > threshold
             "fs": fs,
             "excitation_freq": excitation_freq,
             "noise_frequencies_used": nf,
-        }```
+        }
+```
 
 **91-107**
 ```def run_once(self, time_data, H_raw, B_raw, fs=None,
@@ -654,8 +663,9 @@ def train_base_model(save=True):
         joblib.dump(model, BASE_MODEL_PATH)
         joblib.dump(model, ACTIVE_MODEL_PATH)
     return model, {"comsol_validation_accuracy": acc, "base_samples": int(len(y))}
-{89-125}
-ef retrain_active_model(training_records):
+```
+**89-125**
+```def retrain_active_model(training_records):
     """COMSOL 기본 데이터 + DB에 누적된 실측 라벨 특징으로 active MLP 재학습."""
     ensure_models()
     X_base, y_base = generate(per_class=BASE_PER_CLASS, seed=0)
