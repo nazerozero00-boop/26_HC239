@@ -141,7 +141,8 @@ active_mask = h_rms > threshold
             end - start + 1
             >= 0.70 * typical_length
         )
-    ]```
+    ]
+```
 
 -2. pipeline.py : 각 자화 cycle에서 독립적으로 J-A parameter를 추정한 뒤, 후보 parameter를 다른 모든 cycle에 다시 적용하는 Cross-Cycle Validation을 수행하여 특정 cycle에 과적합되지 않는 대표 parameter를 선택합니다.
 
