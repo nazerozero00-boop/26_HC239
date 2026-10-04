@@ -59,7 +59,7 @@
       <b>멘티 1</b><br>
       • 프로젝트 팀장<br> 
       • FEM 시뮬레이션<br> 
-      센싱 디바이스 S/W 설계
+      • 센싱 디바이스 S/W 설계
     </td>
     <td align="center" width="250" nowrap>
       <img src="./image/member6.jpg" width="110"><br>
