@@ -706,6 +706,7 @@ active_mask = h_rms > threshold
         return np.asarray(times), np.asarray(h_values), np.asarray(b_values)
 ```
  9.mlp_retraining.py : COMSOL 기반 데이터를 이용해 초기 MLP를 학습하고, 사용자가 추가한 실제 측정 데이터를 누적하여 Active MLP를 다시 학습할 수 있습니다.
+ 
 **28-55**
 ```def build_mlp(random_state=0):
     return make_pipeline(
@@ -736,7 +737,9 @@ def train_base_model(save=True):
         joblib.dump(model, ACTIVE_MODEL_PATH)
     return model, {"comsol_validation_accuracy": acc, "base_samples": int(len(y))}
 ```
+
 **89-125**
+
 ```def retrain_active_model(training_records):
     """COMSOL 기본 데이터 + DB에 누적된 실측 라벨 특징으로 active MLP 재학습."""
     ensure_models()
