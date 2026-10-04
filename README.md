@@ -96,47 +96,50 @@
   <img src="./image/photo2.png" width="750">
 </p>
 
-###3-3
+###3-3 
+센싱 디바이스, Raspberry Pi, 진단 알고리즘, AI 모델, GUI 및 데이터베이스가 어떻게 연결되어 전체 진단 시스템을 구성하는지 나타낸 구조도입니다.
 <p align="center">
   <img src="./image/photo3.png" width="750">
 </p>
 
 ###3-4
+철근 자기응답 측정부터 데이터 전송, 신호처리, J-A 모델링, 특징값 추출, AI 진단, 결과 저장 및 시각화까지 데이터가 처리되는 전체 흐름을 나타냅니다.
 <p align="center">
   <img src="./image/photo4.png" width="750">
 </p>
 
 ###3-5
+전자석, Hall Sensor, ACS712 전류 센서, Arduino UNO R4 WiFi, MD13S, Raspberry Pi 등 센싱 디바이스를 구성하는 주요 하드웨어와 연결 관계를 나타냅니다.
 <p align="center">
   <img src="./image/photo5.png" width="750">
 </p>
 
-###3-6
-<p align="center">
-  <img src="./image/photo6.png" width="750">
-</p>
-
 ###3-7
+GUI에서 제공하는 진단 모드, 학습 모드, 진단 이력 및 학습 이력 등 사용자가 접근할 수 있는 주요 메뉴와 화면 구조를 나타냅니다.
 <p align="center">
   <img src="./image/photo7.png" width="750">
 </p>
 
 ###3-8
+구조물 정보, 측정 위치, 학습 데이터, 진단 결과 및 주요 특징값 등 시스템에서 저장·관리하는 데이터 간의 관계를 나타냅니다.
 <p align="center">
   <img src="./image/photo8.png" width="750">
 </p>
 
 ###3-9
+사용자가 진단 또는 학습 기능을 실행했을 때 데이터 입력부터 분석, AI 처리, 결과 출력 및 저장까지 각 기능이 수행되는 순서를 나타냅니다.
 <p align="center">
   <img src="./image/photo9.png" width="750">
 </p>
 
 ###3-10
+FFT 및 Notch Filtering, Active Cycle 추출, Jiles-Atherton Parameter Fitting, M0 보정, Major Loop 복원, 특징값 추출 및 MLP 분류까지 핵심 진단 알고리즘의 처리 과정을 설명합니다.
 <p align="center">
   <img src="./image/photo10.png" width="750">
 </p>
 
 ###3-11
+철근을 능동 자화하기 위한 전자석과 센서 배치, 제어부 및 전원부의 실제 구성과 연결 방식을 나타내며, 센싱 디바이스의 물리적 설계 구조를 보여줍니다.
 <p align="center">
   <img src="./image/photo11.png" width="750">
 </p>
@@ -152,9 +155,7 @@
 
 
 5.핵심 소스코드 
-
-python
-
+python 
 - 1. pipeline.py : H 신호의 Moving RMS를 기반으로 실제 자화가 이루어진 구간을 검출하고, 불완전한 자화 구간을 제외하여 J-A fitting에 사용할 유효 cycle만 추출합니다.
 
 **152-158**
