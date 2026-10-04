@@ -1,6 +1,6 @@
 # 26_HC239
 
-##**1.프로젝트 개요**## 
+**1.프로젝트 개요**
 
 **1-1.프로젝트 소개**
 - 프로젝트 명 : 안전등급 미달 시설물을 위한 B-H커브의 면적 변화량 비파괴 계측 기반 피로도 분류 시스템
@@ -26,6 +26,7 @@
 - 센싱 디바이스 : 전자석을 이용해 구조물 내부 철근을 자화하고 자기응답 데이터를 측정하며, 자화 세기·방향 제어부터 센서 데이터 수집 및 Wi-Fi 기반 실시간 전송까지 일괄 수행
 
 **1-5.기대 효과 및 활용 분야**
+
 기대 효과 :
 - 예방 중심 관리 : 균열·손상 발생 이후가 아닌, 반복 측정을 통해 상태 변화를 조기에 확인
 - 정량적·객관적 진단: B-H 특징값과 AI를 활용해 검사자의 주관 의존도를 낮추고 일관된 기준으로 상태 판단
@@ -48,35 +49,49 @@
 - 하드웨어 / 센서 : WSH135-XPAN2 Hall Sensor, ACS712 5A, MD13S, Yoke Electromagnet
 - 개발 및 협업 : Visual Studio Code, Jupyter Notebook, Git, GitHub, MS Teams, Google Docs
 
-##**2. 팀원 소개**##
+**2. 팀원 소개**
 ## 👥 Team
 
 <table>
   <tr>
     <td align="center">
       <img src="./image/member2.png" width="110"><br>
-      <b>팀원 1</b><br>
+      <b>멘티 1</b><br>
       역할 
+      전자기학 기반 이론 검증
+      FEM 시뮬레이션
+      센싱 디바이스 S/W 설계
     </td>
     <td align="center">
       <img src="./image/member6.jpg" width="110"><br>
-      <b>팀원 2</b><br>
+      <b>멘티 2</b><br>
       역할
+      MLP 구조 설계
+      FFT 및 Notch 필터링
+      데이터 처리 알고리즘 설계
     </td>
     <td align="center">
       <img src="./image/member1.png" width="110"><br>
-      <b>팀원 3</b><br>
+      <b>멘티 3</b><br>
       역할
+      선행 연구 조사 및 분석
+      전자기학 기반 이론 검증
+      센싱 디바이스 H/W 설계
     </td>
     <td align="center">
       <img src="./image/member3.png" width="110"><br>
-      <b>팀원 4</b><br>
+      <b>멘티 4</b><br>
       역할
+      선행 연구 조사 및 분석
+      시뮬레이션 데이터 가공
+      시스템 회로 설계 
     </td>
     <td align="center">
       <img src="./image/member4.png" width="110"><br>
       <b>멘토</b><br>
-      Mentor
+      역할
+      프로젝트 멘토
+      기술자문
     </td>
   </tr>
 </table>
@@ -84,7 +99,7 @@
 
 
 
-##**3.시스템 구성도**## 
+**3.시스템 구성도**
 
 **3-1 가이드라인**
 프로젝트의 전체 개발 방향과 진단 절차를 정의한 가이드라인입니다.
@@ -148,7 +163,7 @@ FFT 및 Notch Filtering, Active Cycle 추출, Jiles-Atherton Parameter Fitting, 
 
 
 
-##**4.작품 소개영상**## 
+**4.작품 소개영상**
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=YVsy0BCYxd4">
@@ -159,8 +174,7 @@ FFT 및 Notch Filtering, Active Cycle 추출, Jiles-Atherton Parameter Fitting, 
 
 
 
-
-##**5.핵심 소스코드**## 
+**5.핵심 소스코드**
 - Language : Python
 1. pipeline.py : H 신호의 Moving RMS를 기반으로 실제 자화가 이루어진 구간을 검출하고, 불완전한 자화 구간을 제외하여 J-A fitting에 사용할 유효 cycle만 추출합니다.
 
