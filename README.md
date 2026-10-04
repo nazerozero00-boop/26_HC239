@@ -307,7 +307,7 @@ active_mask = h_rms > threshold
     }
 ```
 
-    -4. ja_model : 큰 H 범위에서 발생할 수 있는 RK4 수치 폭주를 방지하기 위해 H 변화량을 내부 substep으로 나누어 J-A 미분방정식을 계산합니다.
+-4. ja_model : 큰 H 범위에서 발생할 수 있는 RK4 수치 폭주를 방지하기 위해 H 변화량을 내부 substep으로 나누어 J-A 미분방정식을 계산합니다.
     
 **331-365**
   ```MAX_DH_STEP = 1.0
