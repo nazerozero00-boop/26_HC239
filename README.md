@@ -147,7 +147,7 @@ GUI에서 제공하는 진단 모드, 학습 모드, 진단 이력 및 학습 �
 **3-9 알고리즘 설명서**
 FFT 및 Notch Filtering, Active Cycle 추출, Jiles-Atherton Parameter Fitting, M0 보정, Major Loop 복원, 특징값 추출 및 MLP 분류까지 핵심 진단 알고리즘의 처리 과정을 설명합니다.
 <p align="center">
-  <img src="./image/photo10.png" width="750">
+  <img src="./image/photo12.png" width="750">
 </p>
 
 **3-10 하드웨어 설계도**
