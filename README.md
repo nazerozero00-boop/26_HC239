@@ -415,7 +415,8 @@ active_mask = h_rms > threshold
 
 **220-225**
 
-```B_target = B[start_index:]
+```
+    B_target = B[start_index:]
 
     B_scale = np.ptp(B_target)
 
@@ -424,14 +425,16 @@ active_mask = h_rms > threshold
 ```
 
 **238-241**
- ```x_scale = np.maximum(
+ ```
+    x_scale = np.maximum(
         np.abs(initial_params),
         1e-12,
     )
 ```
 
 **248-272**
- ```optimization = least_squares(
+ ```
+    optimization = least_squares(
         fun=_ja_residual,
         x0=initial_params,
         bounds=(
