@@ -58,9 +58,9 @@
       <img src="./image/member2.png" width="110"><br>
       <b>멘티 1</b><br>
       역할 
-      전자기학 기반 이론 검증
-      FEM 시뮬레이션
-      센싱 디바이스 S/W 설계
+      - 전자기학 기반 이론 검증
+      - FEM 시뮬레이션
+      - 센싱 디바이스 S/W 설계
     </td>
     <td align="center">
       <img src="./image/member6.jpg" width="110"><br>
@@ -218,7 +218,7 @@ active_mask = h_rms > threshold
     ]
 ```
 
--2. pipeline.py : 각 자화 cycle에서 독립적으로 J-A parameter를 추정한 뒤, 후보 parameter를 다른 모든 cycle에 다시 적용하는 Cross-Cycle Validation을 수행하여 특정 cycle에 과적합되지 않는 대표 parameter를 선택합니다.
+2. pipeline.py : 각 자화 cycle에서 독립적으로 J-A parameter를 추정한 뒤, 후보 parameter를 다른 모든 cycle에 다시 적용하는 Cross-Cycle Validation을 수행하여 특정 cycle에 과적합되지 않는 대표 parameter를 선택합니다.
 
 **538-570**
 ```best_fit, all_fit_runs = (
@@ -297,7 +297,7 @@ active_mask = h_rms > threshold
         key=lambda r: r["validation_nrmse_median"],)
 ```
 
--3. pipeline.py : 동일한 J-A parameter를 유지하면서 각 cycle의 초기 자화 상태 M_0만 별도로 보정하여 측정 cycle 간 초기 상태 차이를 보완합니다. 이를 통해 기준 데이터의 median NRMSE를 약 개선하였습니다.
+3. pipeline.py : 동일한 J-A parameter를 유지하면서 각 cycle의 초기 자화 상태 M_0만 별도로 보정하여 측정 cycle 간 초기 상태 차이를 보완합니다. 이를 통해 기준 데이터의 median NRMSE를 약 개선하였습니다.
 
 **781-809**
  ```def objective(m0):
@@ -378,7 +378,7 @@ active_mask = h_rms > threshold
     }
 ```
 
--4. ja_model : 큰 H 범위에서 발생할 수 있는 RK4 수치 폭주를 방지하기 위해 H 변화량을 내부 substep으로 나누어 J-A 미분방정식을 계산합니다.
+4. ja_model : 큰 H 범위에서 발생할 수 있는 RK4 수치 폭주를 방지하기 위해 H 변화량을 내부 substep으로 나누어 J-A 미분방정식을 계산합니다.
     
 **331-365**
   ```MAX_DH_STEP = 1.0
@@ -483,7 +483,7 @@ active_mask = h_rms > threshold
         M[i] = M_sub
 ```
 
--5. ja_fitting.py : J-A parameter들의 크기 차이를 보정하고, 순간적인 spike/outlier가 fitting 전체를 왜곡하지 않도록 Soft-L1 기반 Robust Least-Squares를 적용합니다.
+5. ja_fitting.py : J-A parameter들의 크기 차이를 보정하고, 순간적인 spike/outlier가 fitting 전체를 왜곡하지 않도록 Soft-L1 기반 Robust Least-Squares를 적용합니다.
 
 **220-225**
 
@@ -563,7 +563,7 @@ active_mask = h_rms > threshold
         nrmse = np.nan
 ```
         
-  -6. diagnosis_engine.py : 전체 진단 Pipeline을 실행한 뒤 복원된 Major Loop에서 Bmax, Area를 추출하고, 해당 특징값을 AI 진단 단계로 전달합니다.
+6. diagnosis_engine.py : 전체 진단 Pipeline을 실행한 뒤 복원된 Major Loop에서 Bmax, Area를 추출하고, 해당 특징값을 AI 진단 단계로 전달합니다.
   
  **58-89**
  ``` result = run_diagnosis(
@@ -619,7 +619,7 @@ active_mask = h_rms > threshold
         out["excitation_freq"] = feat["excitation_freq"]
         return out
 ```
--7. mlp_model.py : 현재 프로토타입에서는 Bmax와 Area를 입력으로 사용하여 안정·주의·위험 상태를 분류합니다.
+7. mlp_model.py : 현재 프로토타입에서는 Bmax와 Area를 입력으로 사용하여 안정·주의·위험 상태를 분류합니다.
 **40-83**
 ```def diagnose(self, Bmax, Hmax, Area):
         dArea = (
@@ -654,7 +654,7 @@ active_mask = h_rms > threshold
             "dArea": dArea,
         }
 ```
--8. sensor_udp_io.py : Raspberry Pi에서 Arduino에 측정 시작·종료 명령을 전송하고, 센싱 디바이스로부터 전송되는 데이터를 UDP로 실시간 수신합니다.
+8. sensor_udp_io.py : Raspberry Pi에서 Arduino에 측정 시작·종료 명령을 전송하고, 센싱 디바이스로부터 전송되는 데이터를 UDP로 실시간 수신합니다.
 **52-67**
  ``` def _send_command(self, command):
         if self.sock is None:
@@ -710,7 +710,7 @@ active_mask = h_rms > threshold
             raise ValueError(f"수신 데이터가 너무 적습니다: {len(times)}개")
         return np.asarray(times), np.asarray(h_values), np.asarray(b_values)
 ```
-- 9.mlp_retraining.py : COMSOL 기반 데이터를 이용해 초기 MLP를 학습하고, 사용자가 추가한 실제 측정 데이터를 누적하여 Active MLP를 다시 학습할 수 있습니다.
+9.mlp_retraining.py : COMSOL 기반 데이터를 이용해 초기 MLP를 학습하고, 사용자가 추가한 실제 측정 데이터를 누적하여 Active MLP를 다시 학습할 수 있습니다.
 **28-55**
 ```def build_mlp(random_state=0):
     return make_pipeline(
