@@ -58,7 +58,7 @@
       역할
     </td>
     <td align="center">
-      <img src="./image/member5.png" width="110"><br>
+      <img src="./image/member6.jpg" width="110"><br>
       <b>팀원 2</b><br>
       역할
     </td>
