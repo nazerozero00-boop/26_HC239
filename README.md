@@ -53,27 +53,27 @@
 <table>
   <tr>
     <td align="center">
-      <img src="./image/member1.png" width="110"><br>
+      <img src="./image/member2.png" width="110"><br>
       <b>팀원 1</b><br>
       역할
     </td>
     <td align="center">
-      <img src="./image/member2.png" width="110"><br>
+      <img src="./image/member5.png" width="110"><br>
       <b>팀원 2</b><br>
       역할
     </td>
     <td align="center">
-      <img src="./한이음_사진모음/member3.png" width="110"><br>
+      <img src="./image/member1.png" width="110"><br>
       <b>팀원 3</b><br>
       역할
     </td>
     <td align="center">
-      <img src="./한이음_사진모음/member4.png" width="110"><br>
+      <img src="./image/member3.png" width="110"><br>
       <b>팀원 4</b><br>
       역할
     </td>
     <td align="center">
-      <img src="./한이음_사진모음/member5.png" width="110"><br>
+      <img src="./image/member4.png" width="110"><br>
       <b>멘토</b><br>
       Mentor
     </td>
